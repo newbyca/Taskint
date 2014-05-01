@@ -4,11 +4,32 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 </head>
 
-<body>
-	{{> main}}
-</body>
+<body></body>
 
-<template name="main">
+<template name="home">
+	<input type="text" accesskey="t" />
+	<ul id="lists">
+		{{#each lists}}
+			{{> list}}
+		{{/each}}
+	</ul>
+</template>
+
+<template name="list">
+	<li id="{{_id}}">
+		{{#if fixed}}
+		<span><a href="/{{owner}}">{{text}}</a></span>
+		{{else}}
+		<span><a href="/{{owner}}/{{text}}">{{text}}</a></span>
+		<span class="actions">
+			<span tabindex="0" title="Delete">&nbsp;&#x02717;&nbsp;</span>
+		</span>
+		{{/if}}
+	</li>
+</template>
+
+<template name="tasklist">
+	<input id="list" type="hidden" value="{{_id}}" />
 	<input type="text" accesskey="t" />
 	<ul id="tasks">
 		{{#each tasks}}
