@@ -40,7 +40,7 @@ if (Meteor.isClient) {
   }
 
   Template.task.events({
-    'click li span:nth-child(2)': function (e, template) {
+    'click li .actions span:nth-child(1)': function (e, template) {
       var task = this;
       $(template.find('li')).fadeOut('fast', function(){
         Tasks.remove(task._id);
