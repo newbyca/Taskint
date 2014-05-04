@@ -15,6 +15,8 @@ if (Meteor.isClient) {
       }
     });
     tasks.sortable({
+      opacity: 0.75,
+      placeholder: 'placeholder',
       update: function(e, o){
         var lis = $('#tasks li');
         for(var i=0, max=lis.length; i < max; i++){
