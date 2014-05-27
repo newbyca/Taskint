@@ -35,7 +35,7 @@ function addList(){
     owner: username,
     text: text.val(),
     date: new Date(),
-    sort: 0
+    sort: 1
   };
   Lists.insert(list);
   text.val('');
