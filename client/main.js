@@ -44,7 +44,7 @@ function addList(){
 Template.list.events({
   'click li .actions span:nth-child(1)': function (e, template) {
     var list = this;
-    if(!list.fixed){
+    if(!list.fixed && confirm('Remove ' + list.text + '?')){
       $(template.find('li')).fadeOut('fast', function(){
         Tasks.find({list: list._id}).forEach(function(task){
           Tasks.remove(task._id);
