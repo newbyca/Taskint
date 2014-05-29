@@ -18,12 +18,18 @@
 <template name="list">
 	<li id="{{_id}}">
 		{{#if fixed}}
-		<span><a href="/{{owner}}">{{text}}</a></span>
+			<span><a href="/{{owner}}">{{text}}</a></span>
+			{{#with topTask}}
+				<span class="subtext">({{text}})</span>
+			{{/with}}
 		{{else}}
-		<span><a href="/{{owner}}/{{text}}">{{text}}</a></span>
-		<span class="actions">
-			<span tabindex="0" title="Delete">&nbsp;&#x02717;&nbsp;</span>
-		</span>
+			<span><a href="/{{owner}}/{{text}}">{{text}}</a></span>
+			{{#with topTask}}
+				<span class="subtext">({{text}})</span>
+			{{/with}}
+			<span class="actions">
+				<span tabindex="0" title="Delete">&nbsp;&#x02717;&nbsp;</span>
+			</span>
 		{{/if}}
 	</li>
 </template>

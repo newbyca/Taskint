@@ -2,6 +2,10 @@ Template.home.lists = function () {
   return Lists.find({owner: username}, {sort: {sort: 1, date: -1}});
 };
 
+Template.list.topTask = function () {
+  return Tasks.findOne({list: this._id}, {sort: {sort: 1, date: -1}});
+}
+
 Template.home.rendered = function(){
   var text = $('input[type=text]');
   var lists = $('#lists');

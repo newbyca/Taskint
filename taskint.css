@@ -51,6 +51,10 @@ li .actions span{
 li .actions span:hover{
 	color: #f99;
 }
+.subtext{
+	color: #999;
+	font-size: .60em;
+}
 .placeholder{
 	height: 39px;
 	margin: .20em;
